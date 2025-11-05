@@ -1,0 +1,19 @@
+.counter-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 3px solid #1b134d;
+    border-radius: 6px;
+    min-width: 400px;
+}
+
+.counter-wrapper .button {
+    width: auto;
+}
+
+.counter-wrapper .result-container {
+    padding: 20px;
+    font-size: 26px;
+    font-weight: 600;
+}
