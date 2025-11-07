@@ -1,4 +1,6 @@
-export const animalsData = [
+import type { Animal } from "./types";
+
+export const animalsData: Animal[] = [
     {
         name: "Alex",
         species: "Lion",
