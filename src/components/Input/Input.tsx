@@ -1,15 +1,18 @@
 import "./styles.css";
+import type { InputProps } from "./types";
 
-function Input({ name, type, id, placeholder, label, required=false, disabled=false }) {
+function Input({
+    name,
+    type="text",
+    id,
+    placeholder,
+    label,
+    required = false,
+    disabled = false,
+}: InputProps) {
     return (
         <div className="form-group">
-            <label
-                htmlFor={id}
-                className="lable-control"
-                required={required}
-            >
-                {label}
-            </label>
+            {label && <label htmlFor={id} className="lable-control">{label}</label>}
             <input
                 type={type}
                 name={name}
