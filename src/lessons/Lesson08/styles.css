@@ -1,4 +1,4 @@
-.lesson07-wrapper {
+.lesson08-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,6 +6,6 @@
     gap: 30px;
     flex: 1;
     padding: 50px;
-    background: rgb(235, 233, 175);
+    background: rgb(175, 232, 235);
     font-size: 36px;
 }
