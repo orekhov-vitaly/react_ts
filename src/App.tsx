@@ -5,6 +5,7 @@ import Lesson08 from "lessons/Lesson08/Lesson08";
 
 // Импорты домашних заданий
 // import Homework06 from "homeworks/Homework06/Homework06";
+import Homework07 from "homeworks/Homework07/Homework07";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
 
             {/* Homeworks */}
             {/* <Homework06 /> */}
+            <Homework07 />
         </>
     );
 }
