@@ -1,19 +1,25 @@
-import "./styles.css";
 import type { InputProps } from "./types";
+import { FormGroup, LabelControl, InputElement } from "./styles";
 
 function Input({
     name,
-    type="text",
+    type = "text",
     id,
     placeholder,
     label,
     required = false,
     disabled = false,
+    value,
+    onChange,
 }: InputProps) {
     return (
-        <div className="form-group">
-            {label && <label htmlFor={id} className="lable-control">{label}</label>}
-            <input
+        <FormGroup>
+            {label && (
+                <LabelControl htmlFor={id} className="lable-control">
+                    {label}
+                </LabelControl>
+            )}
+            <InputElement
                 type={type}
                 name={name}
                 id={id}
@@ -21,8 +27,10 @@ function Input({
                 placeholder={placeholder}
                 required={required}
                 disabled={disabled}
+                value={value}
+                onChange={onChange}
             />
-        </div>
+        </FormGroup>
     );
 }
 
