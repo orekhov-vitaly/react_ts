@@ -31,6 +31,7 @@ const globalStyles = css`
 
     #root {
         display: flex;
+        justify-content: center;
         min-height: 100%;
     }
 `;

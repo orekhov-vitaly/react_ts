@@ -7,6 +7,7 @@ interface ButtonStyledProps {
 export const ButtonComponent = styled.button<ButtonStyledProps>`
     width: 100%;
     padding: 20px 30px;
+    margin: 0 0 30px;
     background: ${({ isDanger }) => (isDanger ? "#f5381fff" : "#1f27f5")};
     font-size: 20px;
     line-height: 1.5;
@@ -23,5 +24,9 @@ export const ButtonComponent = styled.button<ButtonStyledProps>`
     &:disabled {
         opacity: 0.6;
         pointer-events: none;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
     }
 `;

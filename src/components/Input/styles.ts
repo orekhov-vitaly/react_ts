@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 export const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
+    margin: 0 0 30px;
 `;
 
 export const LabelControl = styled.label`
