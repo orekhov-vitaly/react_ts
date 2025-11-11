@@ -1,25 +1,26 @@
-import { useState } from "react";
+// import { useState } from "react";
 
-import "./styles.css";
+import { CounterWrapper, ButtonWrapper, ResultContainer } from "./styles";
 import Button from "components/Button/Button";
+import type { CounterProps } from "./types";
 
-function Counter() {
-    const [counter, setCounter] = useState<number>(0);
+function Counter({ counter, onPlusClick, onMinusClick }: CounterProps) {
+    // const [counter, setCounter] = useState<number>(0);
 
-    const onMinusClick = (): void => {
-        setCounter((prevState) => --prevState);
-    };
+    // const onMinusClick = (): void => {
+    //     setCounter((prevState) => --prevState);
+    // };
 
-    const onPlusClick = (): void => {
-        setCounter((prevState) => ++prevState);
-    };
+    // const onPlusClick = (): void => {
+    //     setCounter((prevState) => ++prevState);
+    // };
 
     return (
-        <div className="counter-wrapper">
-            <Button name="-" onClick={onMinusClick} />
-            <div className="result-container">{counter}</div>
+        <CounterWrapper>
+            <Button name="-" onClick={onMinusClick} isDanger />
+            <ResultContainer>{counter}</ResultContainer>
             <Button name="+" onClick={onPlusClick} />
-        </div>
+        </CounterWrapper>
     );
 }
 

@@ -3,4 +3,5 @@ export interface ButtonProps {
     name: string;
     disabled?: boolean;
     onClick?: () => void;
+    isDanger?: boolean;
 }
