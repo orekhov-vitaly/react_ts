@@ -53,5 +53,6 @@ export const ResultBlock = styled.div<ResultBlockStyleProps>`
         opacity: ${({isLoading}) => isLoading ? "1" : "0"};
         z-index: 200;
         transition: opacity .2s;
+        
     }
 `;
