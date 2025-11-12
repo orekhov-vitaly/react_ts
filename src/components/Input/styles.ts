@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 export const FormGroup = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin: 0 0 30px;

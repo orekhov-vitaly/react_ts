@@ -5,28 +5,37 @@ import GlobalStyles from "styles/GlobalStyles";
 // import Lesson07 from "lessons/Lesson07/Lesson07";
 // import Lesson08 from "lessons/Lesson08/Lesson08";
 // import Lesson09 from "lessons/Lesson09/Lesson09";
+import Lesson10 from "lessons/Lesson10/Lesson10";
 
 // Импорты домашних заданий
 // import Homework06 from "homeworks/Homework06/Homework06";
 // import Homework07 from "homeworks/Homework07/Homework07";
-import Homework09 from "homeworks/Homework09/Homework09";
+// import Homework09 from "homeworks/Homework09/Homework09";
 
 function App() {
     return (
         <>
             <GlobalStyles/>
-            {/* Lessons */}
             { /* Лекция 6 - TypeScript */ }
             {/* <Lesson06/> */}
+            {/* <Homework06 /> */}
+            
+            { /* Лекция 7 -  */ }
             {/* <Lesson07 /> */}
+            {/* <Homework07 /> */}
+            
+            { /* Лекция 8 -  */ }
             {/* <Lesson08 /> */}
+
+            { /* Лекция 9 -  */ }
             {/* <Lesson09 /> */}
+            {/* <Homework09 /> */}
+
+            {/* Lesson 10 - useEffect */}
+            <Lesson10 />
 
 
             {/* Homeworks */}
-            {/* <Homework06 /> */}
-            {/* <Homework07 /> */}
-            <Homework09 />
         </>
     );
 }

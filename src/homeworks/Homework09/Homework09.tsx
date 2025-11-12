@@ -3,7 +3,6 @@ import { useState, type ChangeEvent } from "react";
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 import { FormWrapper, ResultBlock, ResultWrapper } from "./styles";
-import { useDeferredValue } from "react";
 
 function Homework09() {
     const [userName, setUserName] = useState<string>("");
@@ -13,17 +12,17 @@ function Homework09() {
     const [resultAge, setResultAge] = useState<string>("");
 
     const onChangeName = (event: ChangeEvent<HTMLInputElement>) => {
-        setUserName(event.target.value)
-    }
+        setUserName(event.target.value);
+    };
 
     const onChangeAge = (event: ChangeEvent<HTMLInputElement>) => {
-        setUserAge(event.target.value)
-    }
+        setUserAge(event.target.value);
+    };
 
     const showResult = () => {
         setResultName(userName);
         setResultAge(userAge);
-    }
+    };
 
     return (
         <FormWrapper>
@@ -36,6 +35,7 @@ function Homework09() {
                 onChange={onChangeName}
             />
             <Input
+                type="number"
                 name="user_age"
                 id="user_age"
                 label="Age"
@@ -45,8 +45,8 @@ function Homework09() {
             />
             <Button name="Get result" onClick={showResult} />
             <ResultWrapper>
-                <ResultBlock>Name: {resultName}</ResultBlock>
-                <ResultBlock>Age: {resultAge}</ResultBlock>
+                <ResultBlock>Name: {resultName ? resultName : "--"}</ResultBlock>
+                <ResultBlock>Age: {resultAge ? resultAge : "--"}</ResultBlock>
             </ResultWrapper>
         </FormWrapper>
     );
