@@ -1,3 +1,4 @@
+import Homework10 from "homeworks/Homework10/Homework10";
 import GlobalStyles from "styles/GlobalStyles";
 
 // Импорты лекций
@@ -5,7 +6,7 @@ import GlobalStyles from "styles/GlobalStyles";
 // import Lesson07 from "lessons/Lesson07/Lesson07";
 // import Lesson08 from "lessons/Lesson08/Lesson08";
 // import Lesson09 from "lessons/Lesson09/Lesson09";
-import Lesson10 from "lessons/Lesson10/Lesson10";
+// import Lesson10 from "lessons/Lesson10/Lesson10";
 
 // Импорты домашних заданий
 // import Homework06 from "homeworks/Homework06/Homework06";
@@ -32,10 +33,8 @@ function App() {
             {/* <Homework09 /> */}
 
             {/* Lesson 10 - useEffect */}
-            <Lesson10 />
-
-
-            {/* Homeworks */}
+            {/* <Lesson10 /> */}
+            <Homework10 />
         </>
     );
 }
