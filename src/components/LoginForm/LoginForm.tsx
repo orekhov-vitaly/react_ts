@@ -7,7 +7,7 @@ import Button from "components/Button/Button";
 import type { LoginFormValues } from "./types";
 
 function LoginForm() {
-    // --- Создание ваоидационной схемы с помощью Yup
+    // --- Создание валидационной схемы с помощью Yup
     const shema = Yup.object().shape({
         email: Yup.string()
             .required("Field email is required")
