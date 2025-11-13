@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ChangeEvent } from "react";
 import axios from "axios";
 import { v4 } from "uuid";
 
@@ -9,11 +9,18 @@ import {
     ContentBlock,
     ErrorBlock,
     SpinnerBlock,
+    ImageBlock,
+    DeleteButton,
 } from "./styles";
 import Image from "components/Image/Image";
 
 function Lesson11() {
-    const [imgUrl, setImgUrl] = useState<string[]>([]);
+    interface IMAGE {
+        id: string;
+        url: string;
+    }
+
+    const [imgUrl, setImgUrl] = useState<IMAGE[]>([]);
     const [error, setError] = useState<undefined | string>("");
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -25,7 +32,7 @@ function Lesson11() {
         try {
             const result = await axios.get(url);
             const imgData = result.data.message;
-            setImgUrl([...imgUrl, imgData]);
+            setImgUrl([...imgUrl, { id: v4(), url: imgData }]);
         } catch (error: any) {
             setError(error.message);
         } finally {
@@ -45,6 +52,11 @@ function Lesson11() {
         setImgUrl([]);
     };
 
+    const deletImage = (imageId: string) => {
+        console.log(imageId);
+        
+    }
+
     return (
         <Lesson11Wrapper>
             <ActionBlock>
@@ -57,11 +69,16 @@ function Lesson11() {
             </ActionBlock>
             {error && <ErrorBlock>{error}</ErrorBlock>}
             <ContentBlock>
-                {imgUrl.map((img) => {
-                    return <Image key={v4()} src={img} />;
+                {imgUrl.map((imgObj) => {
+                    return (
+                        <ImageBlock key={v4()}>
+                            <Image id={imgObj.id} src={imgObj.url} />
+                            <DeleteButton data-id={imgObj.id} onClick={() => {deletImage(imgObj.id)}} />
+                        </ImageBlock>
+                    );
                 })}
             </ContentBlock>
-            {imgUrl.length !== 0 ? (
+            {imgUrl.length !== 0 && (
                 <ActionBlock>
                     <SpinnerBlock isLoading={isLoading}></SpinnerBlock>
                     <Button
@@ -71,8 +88,6 @@ function Lesson11() {
                         disabled={isLoading}
                     ></Button>
                 </ActionBlock>
-            ) : (
-                ""
             )}
         </Lesson11Wrapper>
     );
