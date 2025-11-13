@@ -52,9 +52,10 @@ function Lesson11() {
         setImgUrl([]);
     };
 
-    const deletImage = (imageId: string) => {
-        console.log(imageId);
-        
+    const removeImage = (imageId: string) => {
+        console.log(imgUrl);
+        const result = imgUrl.filter(item => item.id !== imageId);
+        setImgUrl(result);
     }
 
     return (
@@ -73,7 +74,7 @@ function Lesson11() {
                     return (
                         <ImageBlock key={v4()}>
                             <Image id={imgObj.id} src={imgObj.url} />
-                            <DeleteButton data-id={imgObj.id} onClick={() => {deletImage(imgObj.id)}} />
+                            <DeleteButton data-id={imgObj.id} onClick={() => {removeImage(imgObj.id)}} />
                         </ImageBlock>
                     );
                 })}
