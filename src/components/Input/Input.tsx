@@ -1,5 +1,5 @@
 import type { InputProps } from "./types";
-import { FormGroup, LabelControl, InputElement } from "./styles";
+import { FormGroup, LabelControl, InputElement, ErrorMessage } from "./styles";
 
 function Input({
     name,
@@ -10,6 +10,7 @@ function Input({
     required = false,
     disabled = false,
     value,
+    error,
     onChange,
 }: InputProps) {
     return (
@@ -30,6 +31,7 @@ function Input({
                 value={value}
                 onChange={onChange}
             />
+            <ErrorMessage>{error}</ErrorMessage>
         </FormGroup>
     );
 }

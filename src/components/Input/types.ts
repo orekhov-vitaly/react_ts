@@ -9,5 +9,6 @@ export interface InputProps {
     required?: boolean;
     disabled?: boolean;
     value?: string;
+    error?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
