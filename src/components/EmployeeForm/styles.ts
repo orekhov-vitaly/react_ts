@@ -22,3 +22,23 @@ export const Title = styled.div`
     font-weight: bold;
     text-align: center;
 `;
+
+export const CheckboxContainer = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+`;
+
+export const Checkbox = styled.input`
+    width: 16px;
+    height: 16px;
+`;
+
+export const CheckboxLabel = styled.label`
+    font-size: 20px;
+`;
+
+export const ErrorMessage = styled.div`
+    font-size: 16px;
+    color: red;
+`;

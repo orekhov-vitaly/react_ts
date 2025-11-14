@@ -1,4 +1,3 @@
-import Homework12 from "homeworks/Homework12/Homework12";
 import GlobalStyles from "styles/GlobalStyles";
 
 // Импорты лекций
@@ -14,6 +13,7 @@ import GlobalStyles from "styles/GlobalStyles";
 // import Homework07 from "homeworks/Homework07/Homework07";
 // import Homework09 from "homeworks/Homework09/Homework09";
 // import Homework10 from "homeworks/Homework10/Homework10";
+import Homework12 from "homeworks/Homework12/Homework12";
 
 function App() {
     return (

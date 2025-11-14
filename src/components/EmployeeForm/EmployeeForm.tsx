@@ -1,7 +1,14 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import { EmployeeFormComponent, Title } from "./styles";
+import {
+    EmployeeFormComponent,
+    Title,
+    CheckboxContainer,
+    Checkbox,
+    CheckboxLabel,
+    ErrorMessage,
+} from "./styles";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 import type { EmploeeFormValues } from "./types";
@@ -15,15 +22,15 @@ function EmployeeForm() {
             .typeError("Full name must be string"),
         age: Yup.number()
             .required("Age is required")
-            .test(
-                "Check adult",
-                "Age must be between 18 and 80",
-                (value) => value >= 18 && value <= 80
-            )
+            .min(18, "Min age - 18")
+            .max(80, "Max age - 80")
             .typeError("Age must be number"),
         jobTitle: Yup.string()
             .max(30, "Max 30 symbols")
             .typeError("Job title must be string"),
+        agreement: Yup.boolean()
+            .oneOf([true], "Accept agreement")
+            .required("Agreement is required"),
     });
 
     const formik = useFormik({
@@ -31,6 +38,7 @@ function EmployeeForm() {
             fullName: "",
             age: "",
             jobTitle: "",
+            agreement: false,
         } as EmploeeFormValues,
 
         validationSchema: schema,
@@ -40,6 +48,8 @@ function EmployeeForm() {
             console.log(values);
         },
     });
+
+    console.log(formik);
 
     return (
         <EmployeeFormComponent onSubmit={formik.handleSubmit}>
@@ -68,7 +78,18 @@ function EmployeeForm() {
                 error={formik.errors.jobTitle}
                 onChange={formik.handleChange}
             />
-            <Button name="Create" type="submit" />
+            <CheckboxContainer>
+                <Checkbox
+                    name="agreement"
+                    type="checkbox"
+                    id="agree_id"
+                    checked={formik.values.agreement}
+                    onChange={formik.handleChange}
+                />
+                <CheckboxLabel htmlFor="agree_id">I agree *</CheckboxLabel>
+            </CheckboxContainer>
+            <ErrorMessage>{formik.errors.agreement}</ErrorMessage>
+            <Button name="Create" type="submit" disabled={!formik.values.agreement} />
         </EmployeeFormComponent>
     );
 }
