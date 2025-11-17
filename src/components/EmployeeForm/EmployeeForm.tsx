@@ -29,8 +29,7 @@ function EmployeeForm() {
             .max(30, "Max 30 symbols")
             .typeError("Job title must be string"),
         agreement: Yup.boolean()
-            .oneOf([true], "Accept agreement")
-            .required("Agreement is required"),
+            .oneOf([true], "Accept agreement"),
     });
 
     const formik = useFormik({
