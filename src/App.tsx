@@ -20,6 +20,7 @@ import User from "pages/Users/components/User/User";
 // import Homework07 from "homeworks/Homework07/Homework07";
 // import Homework09 from "homeworks/Homework09/Homework09";
 // import Homework10 from "homeworks/Homework10/Homework10";
+import Homework12 from "homeworks/Homework12/Homework12";
 
 function App() {
     return (
@@ -61,6 +62,7 @@ function App() {
 
             {/* Lesson 12 - formik */}
             {/* <Lesson12 /> */}
+            {/* <Homework12 /> */}
         </BrowserRouter>
     );
 }
