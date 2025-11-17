@@ -4,7 +4,7 @@ export const FormGroup = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0 0 30px;
+    margin: 0;
 `;
 
 export const LabelControl = styled.label`
@@ -37,4 +37,10 @@ export const InputElement = styled.input`
     &::placeholder {
         color: rgba(30, 30, 30, 0.4);
     }
+`;
+
+export const ErrorMessage = styled.div`
+    min-height: 18px;
+    color: red;
+    font-size: 16px;
 `;
