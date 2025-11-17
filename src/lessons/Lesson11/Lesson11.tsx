@@ -13,13 +13,9 @@ import {
     DeleteButton,
 } from "./styles";
 import Image from "components/Image/Image";
+import type { IMAGE } from "./types";
 
 function Lesson11() {
-    interface IMAGE {
-        id: string;
-        url: string;
-    }
-
     const [imgUrl, setImgUrl] = useState<IMAGE[]>([]);
     const [error, setError] = useState<undefined | string>("");
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -53,7 +49,6 @@ function Lesson11() {
     };
 
     const removeImage = (imageId: string) => {
-        console.log(imgUrl);
         const result = imgUrl.filter(item => item.id !== imageId);
         setImgUrl(result);
     }
