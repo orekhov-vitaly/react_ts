@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import path from 'path'
+import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -12,6 +12,7 @@ export default defineConfig({
             homeworks: path.resolve(__dirname, "src/homeworks"),
             lessons: path.resolve(__dirname, "src/lessons"),
             styles: path.resolve(__dirname, "src/styles"),
+            pages: path.resolve(__dirname, "src/pages"),
         },
     },
 });
