@@ -12,7 +12,7 @@ import User from "pages/Users/components/User/User";
 // import Lesson08 from "lessons/Lesson08/Lesson08";
 // import Lesson09 from "lessons/Lesson09/Lesson09";
 // import Lesson10 from "lessons/Lesson10/Lesson10";
-import Lesson11 from "lessons/Lesson11/Lesson11";
+// import Lesson11 from "lessons/Lesson11/Lesson11";
 // import Lesson12 from "lessons/Lesson12/Lesson12";
 
 // Импорты домашних заданий
@@ -20,6 +20,7 @@ import Lesson11 from "lessons/Lesson11/Lesson11";
 // import Homework07 from "homeworks/Homework07/Homework07";
 // import Homework09 from "homeworks/Homework09/Homework09";
 // import Homework10 from "homeworks/Homework10/Homework10";
+import Homework12 from "homeworks/Homework12/Homework12";
 
 function App() {
     return (
@@ -61,6 +62,7 @@ function App() {
 
             {/* Lesson 12 - formik */}
             {/* <Lesson12 /> */}
+            {/* <Homework12 /> */}
         </BrowserRouter>
     );
 }

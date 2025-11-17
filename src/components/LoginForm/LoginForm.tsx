@@ -7,7 +7,11 @@ import Button from "components/Button/Button";
 import type { LoginFormValues } from "./types";
 
 function LoginForm() {
-    // --- Создание ваоидационной схемы с помощью Yup
+    //минимум 8 символов, специальный символ и хотя бы одна заглавная буква
+    const passwordRegex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    // --- Создание валидационной схемы с помощью Yup
     const shema = Yup.object().shape({
         email: Yup.string()
             .required("Field email is required")
@@ -15,10 +19,17 @@ function LoginForm() {
             .max(20, "Max 20 symbols")
             .min(10, "Min 10 symbols")
             .typeError("Email must be string"),
-        password: Yup.number()
+        // password: Yup.number()
+        //     .required("Field password is required")
+        //     .test(
+        //         "Check max",
+        //         "Max 20 symbols",
+        //         (value) => String(value).length <= 20
+        //     )
+        //     .typeError("Password must be numbers"),
+        password: Yup.string()
             .required("Field password is required")
-            .test("Check max", "Max 20 symbols", (value) => String(value).length <= 20)
-            .typeError("Password must be numbers"),
+            .matches(passwordRegex, "At least 8 char, include uppercase, lowercase and special char"),
     });
 
     // --- Настройка формы через Formik
