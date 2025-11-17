@@ -5,6 +5,10 @@ import Home from "pages/Home/Home";
 import Users from "pages/Users/Users";
 import About from "pages/About/About";
 import User from "pages/Users/components/User/User";
+import Clients from "pages/Clients/Clients";
+import Facebook from "pages/Clients/components/Facebook/Facebook";
+import Instagram from "pages/Clients/components/Instagram/Instagram";
+import Linkedin from "pages/Clients/components/Linkedin/Linkedin";
 
 // Импорты лекций
 // import Lesson06 from "lessons/Lesson06/Lesson06";
@@ -35,6 +39,10 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/users" element={<Users />} />
                     <Route path="/users/user" element={<User />} />
+                    <Route path="/clients" element={<Clients />} />
+                    <Route path="/clients/facebook" element={<Facebook />} />
+                    <Route path="/clients/instagram" element={<Instagram />} />
+                    <Route path="/clients/linkedin" element={<Linkedin />} />
                 </Routes>
             </Layout>
 

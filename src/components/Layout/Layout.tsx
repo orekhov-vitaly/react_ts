@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
     LayoutComponent,
     Header,
@@ -10,10 +11,14 @@ import {
 import type { LayoutProps } from "./types";
 
 function Layout({ children }: LayoutProps) {
+    const navigate = useNavigate();
+    const goToAboutPage = () => {
+        navigate("/");
+    };
     return (
         <LayoutComponent>
             <Header>
-                <Logo></Logo>
+                <Logo onClick={goToAboutPage} ></Logo>
                 <NavContainer>
                     <SytyledNavLink
                         to="/"
@@ -39,11 +44,19 @@ function Layout({ children }: LayoutProps) {
                     >
                         Users
                     </SytyledNavLink>
+                    <SytyledNavLink
+                        to="/clients"
+                        style={({ isActive }) => ({
+                            textDecoration: isActive ? "underline" : "none",
+                        })}
+                    >
+                        Clients
+                    </SytyledNavLink>
                 </NavContainer>
             </Header>
             <Main>{children}</Main>
             <Footer>
-                <Logo></Logo>
+                <Logo onClick={goToAboutPage} ></Logo>
             </Footer>
         </LayoutComponent>
     );
