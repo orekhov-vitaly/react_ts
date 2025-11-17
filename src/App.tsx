@@ -12,6 +12,7 @@ import User from "pages/Users/components/User/User";
 // import Lesson08 from "lessons/Lesson08/Lesson08";
 // import Lesson09 from "lessons/Lesson09/Lesson09";
 // import Lesson10 from "lessons/Lesson10/Lesson10";
+import Lesson11 from "lessons/Lesson11/Lesson11";
 // import Lesson12 from "lessons/Lesson12/Lesson12";
 
 // Импорты домашних заданий
@@ -54,6 +55,9 @@ function App() {
             {/* Lesson 10 - useEffect */}
             {/* <Lesson10 /> */}
             {/* <Homework10 /> */}
+
+            {/* Lesson 11 - Practice */}
+            <Lesson11 />
 
             {/* Lesson 12 - formik */}
             {/* <Lesson12 /> */}
