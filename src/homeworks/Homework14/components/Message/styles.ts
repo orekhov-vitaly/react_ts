@@ -6,9 +6,6 @@ export const MessageWrapper = styled.div`
     border-radius: 10px;
 `;
 
-export const AthorName = styled.div`
-`;
-
 export const PostData = styled.div`
     padding: 20px;
     border: 1px solid #1fc6f0ff;

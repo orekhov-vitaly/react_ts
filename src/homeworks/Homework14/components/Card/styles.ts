@@ -9,3 +9,6 @@ export const CardWrapper = styled.div`
 export const Title = styled.h3`
     margin: 0 0 10px;
 `;
+
+export const AthorName = styled.div`
+`;
