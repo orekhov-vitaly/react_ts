@@ -20,6 +20,7 @@ export const Header = styled.header`
 export const Logo = styled.div`
     width: 80px;
     height: 80px;
+    flex-shrink: 0;
     background: #0a2837;
     border-radius: 50%;
     cursor: pointer;
@@ -28,12 +29,6 @@ export const Logo = styled.div`
 export const NavContainer = styled.nav`
     display: flex;
     gap: 16px;
-`;
-
-export const SytyledNavLink = styled(NavLink)`
-    text-decoration: none;
-    font-size: 20px;
-    color: #0a2837;
 `;
 
 export const Main = styled.main`
@@ -49,4 +44,11 @@ export const Footer = styled.footer`
     padding: 20px;
     background: #a7c7d7;
     color: #b2b7a7;
+`;
+
+export const HeaderLogoWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 200px;
 `;

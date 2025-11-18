@@ -1,14 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyles from "styles/GlobalStyles";
 import Layout from "components/Layout/Layout";
-import Home from "pages/Home/Home";
-import Users from "pages/Users/Users";
-import About from "pages/About/About";
-import User from "pages/Users/components/User/User";
-import Clients from "pages/Clients/Clients";
-import Facebook from "pages/Clients/components/Facebook/Facebook";
-import Instagram from "pages/Clients/components/Instagram/Instagram";
-import Linkedin from "pages/Clients/components/Linkedin/Linkedin";
+import { routesData } from "routes/routes";
+import type { RoutePage } from "routes/types";
 
 // Импорты лекций
 // import Lesson06 from "lessons/Lesson06/Lesson06";
@@ -27,23 +21,17 @@ import Linkedin from "pages/Clients/components/Linkedin/Linkedin";
 // import Homework12 from "homeworks/Homework12/Homework12";
 
 function App() {
+    const routes = routesData.map(({ path, element }: RoutePage) => {
+        return <Route path={path} element={element} />;
+    });
+
     return (
         <BrowserRouter>
             <GlobalStyles />
             {/* Lesson 13 - Layout */}
             <Layout>
                 {/* Routes - собирает все маршруты приложения */}
-                <Routes>
-                    {/* Route - это компонент, в который передается маршрут и контент */}
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/users" element={<Users />} />
-                    <Route path="/users/user" element={<User />} />
-                    <Route path="/clients" element={<Clients />} />
-                    <Route path="/clients/facebook" element={<Facebook />} />
-                    <Route path="/clients/instagram" element={<Instagram />} />
-                    <Route path="/clients/linkedin" element={<Linkedin />} />
-                </Routes>
+                <Routes>{routes}</Routes>
             </Layout>
 
             {/* Лекция 6 - TypeScript */}

@@ -6,57 +6,41 @@ import {
     Footer,
     Logo,
     NavContainer,
-    SytyledNavLink,
+    HeaderLogoWrapper,
 } from "./styles";
-import type { LayoutProps } from "./types";
+import type { LayoutProps, NavLink } from "./types";
+import Button from "components/Button/Button";
+import { navLinksData } from "./data";
+import NavigationLink from "components/NavigationLink/NavigationLink";
+import { v4 } from "uuid";
 
 function Layout({ children }: LayoutProps) {
     const navigate = useNavigate();
+
+    const navLinks = navLinksData.map(({ path, name }: NavLink) => {
+        return <NavigationLink key={v4()} path={path} name={name} />;
+    });
+
     const goToAboutPage = () => {
         navigate("/");
     };
+
+    const goToPreviousPage = () => {
+        navigate(-1);
+    };
+
     return (
         <LayoutComponent>
             <Header>
-                <Logo onClick={goToAboutPage} ></Logo>
-                <NavContainer>
-                    <SytyledNavLink
-                        to="/"
-                        style={({ isActive }) => ({
-                            textDecoration: isActive ? "underline" : "none",
-                        })}
-                    >
-                        Home
-                    </SytyledNavLink>
-                    <SytyledNavLink
-                        to="/about"
-                        style={({ isActive }) => ({
-                            textDecoration: isActive ? "underline" : "none",
-                        })}
-                    >
-                        About
-                    </SytyledNavLink>
-                    <SytyledNavLink
-                        to="/users"
-                        style={({ isActive }) => ({
-                            textDecoration: isActive ? "underline" : "none",
-                        })}
-                    >
-                        Users
-                    </SytyledNavLink>
-                    <SytyledNavLink
-                        to="/clients"
-                        style={({ isActive }) => ({
-                            textDecoration: isActive ? "underline" : "none",
-                        })}
-                    >
-                        Clients
-                    </SytyledNavLink>
-                </NavContainer>
+                <HeaderLogoWrapper>
+                    <Logo onClick={goToAboutPage}></Logo>
+                    <Button name="<---" onClick={goToPreviousPage} />
+                </HeaderLogoWrapper>
+                <NavContainer>{navLinks}</NavContainer>
             </Header>
             <Main>{children}</Main>
             <Footer>
-                <Logo onClick={goToAboutPage} ></Logo>
+                <Logo onClick={goToAboutPage}></Logo>
             </Footer>
         </LayoutComponent>
     );
