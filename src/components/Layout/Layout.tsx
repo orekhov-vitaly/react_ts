@@ -34,7 +34,7 @@ function Layout({ children }: LayoutProps) {
             <Header>
                 <HeaderLogoWrapper>
                     <Logo onClick={goToAboutPage}></Logo>
-                    <Button name="<---" onClick={goToPreviousPage} />
+                    <Button name="<" onClick={goToPreviousPage} />
                 </HeaderLogoWrapper>
                 <NavContainer>{navLinks}</NavContainer>
             </Header>

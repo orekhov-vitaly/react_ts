@@ -4,7 +4,7 @@ import Section from "../Section/Section";
 import { MainCardTitle, MainCardWrapper } from "./styles";
 import type { MainCardContextType, UserData } from "./types";
 
-// Шаг 1 - Содаём ъранилище - контекст, с помощью функции createContext
+// Шаг 1 - Содаём хранилище - контекст, с помощью функции createContext
 // которую нужно импортировать
 // export const MainCardContext = createContext<undefined | UserData>(undefined);
 export const MainCardContext = createContext<MainCardContextType>({

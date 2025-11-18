@@ -9,6 +9,7 @@ import Instagram from "pages/Clients/components/Instagram/Instagram";
 import Linkedin from "pages/Clients/components/Linkedin/Linkedin";
 import Lesson14 from "lessons/Lesson14/Lesson14";
 import PageNotFound from "pages/PageNotFound/PageNotFound";
+import Homework14 from "homeworks/Homework14/Homework14";
 
 export const routesData: RoutePage[] = [
     { path: "/", element: <Home /> },
@@ -20,5 +21,6 @@ export const routesData: RoutePage[] = [
     { path: "/clients/instagram", element: <Instagram /> },
     { path: "/clients/linkedin", element: <Linkedin /> },
     { path: "/lesson14", element: <Lesson14 /> },
+    { path: "/homework14", element: <Homework14 /> },
     { path: "*", element: <PageNotFound /> },
 ];
